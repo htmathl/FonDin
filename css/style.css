@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+html, body {
+    margin: 0;
+    width: 100%;
+}
+
+body, button {
+    color: #FFF2D8;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #113946;
+    position: fixed;
+    height: 100vh;
+}
+
+div.titulo {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 100px;
+}
+
+#urano {
+    width: 114px;
+}
+
+#debs, #credmes, #result {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #FFF2D8;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+#linha {
+    width: 100vw;
+    border: 1px solid;
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#tcredmes, #tdebsmes, #tresults, #treservas {
+    position: absolute;
+    top: 14.6em;
+    padding: 5px;
+    background-color: #113946;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 600px) {
+    #mais:hover {
+        color: #FFF2D8;
+        background-color: #113946;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    div.titulo {
+        justify-content: space-evenly;
+    }
+
+    #debs, #credmes, #result {
+        width: 170px;
+        height: 70px;
+        font-size: 20px;
+    }
+
+    div.dineros, #botao, #mais, #menos, #cifrao {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    #tresults {
+        top: 22.5em;
+    }
+
+    #treservas {
+        top: 28.5rem;
+        padding: 0 15px;
+    }
+
+    .entres {
+        position: relative;
+        font-size: 30px;
+        width: 10px;
+        text-align: center;
+    }
+
+    .igual {
+        position: relative;
+        margin: auto;
+        text-align: center;
+        width: 40px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+    
+}
+
+#treservas {
+    font-size: 30px;
+}
+
+#result {
+    margin: auto;
+    width: 225px;
+}
+
+#botao, #mais, #menos, #cifrao {
+    position: fixed;
+    bottom: 5vh;
+    right: 50vw;
+    transform: translate(50%);
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    background-color: #FFF2D8;
+    z-index: 3;
+    transition: all 0.1s linear;
+}
+
+#mais, #menos, #cifrao {
+    z-index: 2;
+}
+
+#fundoPreto {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    transition: all 0.25s ease-in-out;
+}
