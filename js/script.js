@@ -13,9 +13,11 @@ botao.addEventListener('click', () => {
         pathBotao.forEach(e => {
             e.style.stroke = '#FFF2D8';
         });
+
         botao.style.transform = 'translate(50%) rotate(45deg)';
         botao.style.backgroundColor = '#113946';
-        fundoPreto.style.backgroundColor = 'rgba(0, 0, 0, 80%)';
+        
+        fundoPreto.classList.add('ativo');
         
         mais.style.right = '34vw';
         mais.style.bottom = '12.3vh';
@@ -33,9 +35,11 @@ botao.addEventListener('click', () => {
         pathBotao.forEach(e => {
             e.style.stroke = '#113946';
         });
+
         botao.style.transform = 'translate(50%) rotate(0deg)';
         botao.style.backgroundColor = '#FFF2D8';
-        fundoPreto.style.backgroundColor = 'rgba(0, 0, 0, 0)';
+        
+        fundoPreto.classList.remove('ativo');
 
         mais.style.right = '50vw';
         mais.style.bottom = '5vh';
