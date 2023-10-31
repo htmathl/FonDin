@@ -9,7 +9,7 @@ let cifrao = document.getElementById('cifrao');
 botao.addEventListener('click', () => {
     if(desativado) {
         botao.style.transform = 'translate(50%) rotate(45deg)';
-        fundoPreto.style.backgroundColor = 'rgba(0, 0, 0, 70%)';
+        fundoPreto.style.backgroundColor = 'rgba(0, 0, 0, 80%)';
         
         mais.style.right = '34vw';
         mais.style.bottom = '12.3vh';
