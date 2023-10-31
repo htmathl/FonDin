@@ -6,6 +6,17 @@ let mais = document.getElementById('mais');
 let menos = document.getElementById('menos');
 let cifrao = document.getElementById('cifrao');
 
+if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
+   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
+    if (document.documentElement.requestFullScreen) {  
+      document.documentElement.requestFullScreen();  
+    } else if (document.documentElement.mozRequestFullScreen) {  
+      document.documentElement.mozRequestFullScreen();  
+    } else if (document.documentElement.webkitRequestFullScreen) {  
+      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
+    } 
+}
+
 botao.addEventListener('click', () => {
     if(desativado) {
         botao.style.transform = 'translate(50%) rotate(45deg)';
