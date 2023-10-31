@@ -6,20 +6,15 @@ let mais = document.getElementById('mais');
 let menos = document.getElementById('menos');
 let cifrao = document.getElementById('cifrao');
 
-if ((document.fullScreenElement && document.fullScreenElement !== null) ||    
-   (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-    if (document.documentElement.requestFullScreen) {  
-      document.documentElement.requestFullScreen();  
-    } else if (document.documentElement.mozRequestFullScreen) {  
-      document.documentElement.mozRequestFullScreen();  
-    } else if (document.documentElement.webkitRequestFullScreen) {  
-      document.documentElement.webkitRequestFullScreen(Element.ALLOW_KEYBOARD_INPUT);  
-    } 
-}
+let pathBotao = document.querySelectorAll('.path-botao');
 
 botao.addEventListener('click', () => {
     if(desativado) {
+        pathBotao.forEach(e => {
+            e.style.stroke = '#FFF2D8';
+        });
         botao.style.transform = 'translate(50%) rotate(45deg)';
+        botao.style.backgroundColor = '#113946';
         fundoPreto.style.backgroundColor = 'rgba(0, 0, 0, 80%)';
         
         mais.style.right = '34vw';
@@ -35,7 +30,11 @@ botao.addEventListener('click', () => {
 
         desativado = false;
     } else {
+        pathBotao.forEach(e => {
+            e.style.stroke = '#113946';
+        });
         botao.style.transform = 'translate(50%) rotate(0deg)';
+        botao.style.backgroundColor = '#FFF2D8';
         fundoPreto.style.backgroundColor = 'rgba(0, 0, 0, 0)';
 
         mais.style.right = '50vw';

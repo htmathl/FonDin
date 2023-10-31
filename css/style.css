@@ -53,10 +53,7 @@ div.titulo {
 }
 
 @media only screen and (min-width: 600px) {
-    #mais:hover {
-        color: #FFF2D8;
-        background-color: #113946;
-    }
+    
 }
 
 @media only screen and (max-width: 600px) {
@@ -104,6 +101,8 @@ div.titulo {
     }
     
 }
+
+
 
 #treservas {
     font-size: 30px;
