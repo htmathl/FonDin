@@ -16,6 +16,10 @@ body {
     height: 100vh;
 }
 
+input {
+    outline: 0;
+}
+
 div.titulo {
     display: flex;
     justify-content: center;
@@ -99,6 +103,47 @@ div.titulo {
     h1 {
         font-size: 40px;
     }
+
+    .entradas-creditos {
+        border: 3px solid #FFF2D8;
+        border-radius: 20px;
+        margin: 35px 10px;
+    }
+
+    div.titulo-cred {
+        margin-bottom: 50px;
+    }
+
+    .titulo > span {
+        font-size: 2rem;
+        font-weight: bolder;
+    }
+
+    div.valor {
+        display: flex;
+        padding: 10px;
+        margin: auto;
+        justify-content: center;
+    }
+
+    #credito-rs {
+        font-size: 1.3rem;
+
+    }
+
+    input#valor {
+        background: none;
+        border-style: none;
+        text-align: center;
+        transition: all 1s linear;
+        font-size: 1.3rem;
+        color: #FFF2D8;
+        font-weight: 300;
+    }
+
+    .input-focus {
+        width: 90px !important;
+    }
     
 }
 
@@ -143,3 +188,8 @@ div.titulo {
     visibility: visible !important;
     opacity: 0.8 !important;
 }
+
+.principal {
+    display: none;
+}
+

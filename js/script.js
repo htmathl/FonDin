@@ -8,6 +8,33 @@ let cifrao = document.getElementById('cifrao');
 
 let pathBotao = document.querySelectorAll('.path-botao');
 
+let credMes = document.getElementById('credmes');
+
+let inputValorCredito = document.getElementById('valor');
+
+function formatarMoeda() {
+    var valor = inputValorCredito.value;
+
+    valor = valor + '';
+    valor = parseInt(valor.replace(/[\D]+/g, ''));
+    valor = valor + '';
+    valor = valor.replace(/([0-9]{2})$/g, ",$1");
+
+    if (valor.length > 6) {
+        valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+    }
+
+    inputValorCredito.value = valor;
+    if(valor == 'NaN') inputValorCredito.value = '';
+}
+
+inputValorCredito.addEventListener('input', () => {
+    if(inputValorCredito.value.length === 0)
+        inputValorCredito.classList.remove('input-focus');
+    else
+        inputValorCredito.classList.add('input-focus');
+});
+
 botao.addEventListener('click', () => {
     if(desativado) {
         pathBotao.forEach(e => {
