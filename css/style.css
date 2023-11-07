@@ -274,18 +274,18 @@ div.titulo {
     background-color: #113946;
     margin-inline: 0;
     margin-bottom: 0;
-    width: 90vw;
-    height: 0;
+    width: 0vw;
+    height: 80vh;
     left: 50vw !important;
     transform: translate(-50%) !important;
     bottom: 7vh;
     z-index: 4;
     visibility: hidden;
-    transition: visibility 0s, height 0.3s ease-in-out;
+    transition: visibility 0s, all 0.3s ease-in-out;
 }
 
 .entradas-creditos-active {
-    height: 80vh !important;
+    width: 90vw !important;
     visibility: visible !important;
 }
 
