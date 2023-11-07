@@ -128,5 +128,5 @@ btnVoltarAdicionarCred.addEventListener('click', () => {
     divEntradasCreditos.classList.remove('entradas-creditos-active');
     setTimeout(() => {
         mais.classList.remove('mais-active');
-    }, 1000);
+    }, 500);
 });

@@ -222,8 +222,7 @@ div.titulo {
     #btn-voltar-cred {
         display: flex;
         justify-content: center;
-        margin-top: 100px;
-        margin-bottom: 20px;
+        margin-top: 25px;
     }
     
 }
@@ -301,7 +300,7 @@ div.titulo {
     right: 50vw !important;
     transform: translate(50%) !important;
     width: 90vw !important;
-    bottom: 5vh !important;
+    bottom: 10vh !important;
     height: 80vh !important;
 }
 
