@@ -278,7 +278,7 @@ div.titulo {
     height: 0;
     left: 50vw !important;
     transform: translate(-50%) !important;
-    bottom: 15vh;
+    bottom: 7vh;
     z-index: 4;
     visibility: hidden;
     transition: visibility 0s, height 0.3s ease-in-out;
@@ -300,7 +300,7 @@ div.titulo {
     right: 50vw !important;
     transform: translate(50%) !important;
     width: 90vw !important;
-    bottom: 15vh !important;
+    bottom: 7vh !important;
     height: 80vh !important;
 }
 
