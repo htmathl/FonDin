@@ -189,6 +189,8 @@ div.titulo {
     #dia-cred {
         padding: 0;
         max-width: 110px;
+        position: relative;
+        top: -0.2em;
     }
 
     .cb-cred-indefinido {

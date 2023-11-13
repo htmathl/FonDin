@@ -14,6 +14,7 @@ let cbCreditoRecorrente = document.querySelector('.credito-recorrente');
 let cbContDiasUteis = document.querySelector('#cont-dias-uteis');
 let cbSomaDiasUteis = document.querySelector('#soma-dias-uteis');
 let lgdCreditoDia = document.querySelector('.dia-cred');
+let inpCreditoDia = document.querySelector('#dia-cred');
 
 let divCredIndefinido = document.querySelector('.cb-cred-indefinido');
 let cbCredIndefinido = document.querySelector('.indefinido-cred');
@@ -50,6 +51,18 @@ inputValorCredito.addEventListener('input', () => {
     else
         inputValorCredito.classList.add('input-focus');
 });
+
+const data = new Date();
+const hoje = data.getDate();
+let mesAtual = 11;
+
+const dicMes = [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ];
+
+for (let i = 0; i < dicMes.length; i++) {
+    if(dicMes.indexOf(dicMes[i]) === mesAtual) mesAtual = dicMes[i];
+}
+
+lgdCreditoDia.innerText = mesAtual;
 
 botao.addEventListener('click', () => {
     if(desativadoFAB) {
@@ -100,13 +113,14 @@ botao.addEventListener('click', () => {
 });
 
 cbCreditoRecorrente.addEventListener('click', () => {
+    console.log("click");
     if(desativadoCredRec) {
         cbCreditoRecorrente.classList.add('credito-recorrente-hover');
-        lgdCreditoDia.innerHTML = 'Todo dia';
+        inpCreditoDia.setAttribute('placeholder', 'Todo dia');
         desativadoCredRec = false;
     } else {
         cbCreditoRecorrente.classList.remove('credito-recorrente-hover');
-        lgdCreditoDia.innerHTML = 'Dia';
+        inpCreditoDia.setAttribute('placeholder', 'Dia');
         desativadoCredRec = true;
     }
 });
