@@ -18,8 +18,10 @@ let cbCredIndefinido = document.querySelector('.indefinido-cred');
 
 let inputValorCredito = document.getElementById('valor');
 
-let divEntradasCreditos = document.querySelector('#entradas-creditos');
+let divEntradas = document.querySelector('#entradas');
 let btnVoltarAdicionarCred = document.getElementById('btn-voltar-cred'); 
+
+let divEntradasCreditos = document.querySelector('#entradas-creditos');
 
 function formatarMoeda() {
     var valor = inputValorCredito.value;
@@ -118,15 +120,27 @@ divCredIndefinido.addEventListener('click', () => {
 });
 
 mais.addEventListener('click', () => {
+    mais.classList.add('mais-active-transition');
     mais.classList.add('mais-active');
+    
     setTimeout(() => {
-        divEntradasCreditos.classList.add('entradas-creditos-active');
+        divEntradas.classList.add('entradas-active');
+        setTimeout(() => { 
+            divEntradasCreditos.style.display = 'block'; 
+        }, 200);
+
     }, 500);
 });
 
 btnVoltarAdicionarCred.addEventListener('click', () => {
-    divEntradasCreditos.classList.remove('entradas-creditos-active');
+    divEntradas.classList.remove('entradas-active');
+    divEntradasCreditos.style.display = 'none';
+
     setTimeout(() => {
         mais.classList.remove('mais-active');
+        setTimeout(() => {
+            mais.classList.remove('mais-active-transition');
+        }, 100);
+
     }, 500);
 });

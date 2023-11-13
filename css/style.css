@@ -99,20 +99,30 @@ div.titulo {
         text-align: center;
     }
 
-    .igual {
+    .igual, .igual::before {
         position: relative;
-        margin: auto;
-        text-align: center;
-        width: 40px;
+        margin: 20px auto 0;
+        width: 15px;
+        border: 1.5px solid #FFF2D8;
+        border-radius: 2px;
+    }
+
+    .igual::before {
+        content: "";
+        position: relative;
+        top: -6px;
+        float: right;
+        left: 1px;
+        margin-top: 10px;
     }
 
     h1 {
         font-size: 40px;
     }
 
-    .entradas-creditos {
+    .bordas-elementos {
         border: 3px solid #FFF2D8;
-        border-radius: 20px;
+        border-radius: 10px;
     }
 
     div.titulo-cred {
@@ -269,7 +279,7 @@ div.titulo {
     opacity: 0.8 !important;
 }
 
-#entradas-creditos {
+#entradas {
     position: fixed;
     background-color: #113946;
     width: 0vw;
@@ -282,24 +292,28 @@ div.titulo {
     transition: visibility 0s, all 0.3s ease-in-out;
 }
 
-.entradas-creditos-active {
-    width: 90vw !important;
+.entradas-active {
     visibility: visible !important;
+    width: 90vw !important;
 }
 
-.mais-active > svg {
+.mais-active-transition > svg {
     rotate: 45deg;
     transition: rotate 0.4s ease-in-out;
 }
 
+.mais-active-transition {
+    transition: all 0.3s ease-in-out !important;
+}
+
 .mais-active {
     z-index: 4 !important;
-    transition: all 0.4s ease-in-out !important;
     right: 50vw !important;
     transform: translate(50%) !important;
     width: 90vw !important;
     bottom: 7vh !important;
     height: 80vh !important;
+    border: 3px solid #FFF2D8;
 }
 
 .escolha-dias-uteis {
@@ -318,4 +332,8 @@ div.titulo {
 #soma-dias-uteis {
     border-width: 2px;
     padding-inline: 10px;
+}
+
+#entradas-creditos {
+    display: none;
 }
