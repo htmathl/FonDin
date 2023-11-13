@@ -72,7 +72,7 @@ div.titulo {
     }
 
     #debsmes, #credmes, #result {
-        width: 170px;
+        width: 150px;
         height: 70px;
         font-size: 20px;
     }
@@ -88,8 +88,9 @@ div.titulo {
     }
 
     #treservas {
-        top: 28.5rem;
+        top: 14.75em;
         padding: 0 15px;
+        font-size: 30px;
     }
 
     .entres {
@@ -99,22 +100,18 @@ div.titulo {
         text-align: center;
     }
 
-    .igual, .igual::before {
-        position: relative;
-        margin: 20px auto 0;
-        width: 15px;
-        border: 2px solid #FFF2D8;
-        border-radius: 10px;
-        z-index: 1;
+    .igual {
+        margin: 1.3em auto 0;
+        width: fit-content;
     }
 
-    .igual::before {
-        content: "";
+    .igual1, .igual2 {
         position: relative;
-        top: -6px;
-        float: right;
-        left: 0.09em;
-        margin-top: 10px;
+        margin: 3px auto 0;
+        width: 15px;
+        border: 1.9px solid #FFF2D8;
+        border-radius: 20px;
+        z-index: 1;
     }
 
     h1 {
@@ -238,12 +235,8 @@ div.titulo {
     
 }
 
-#treservas {
-    font-size: 30px;
-}
-
 #result {
-    margin: 12px auto;
+    margin: 0.3em auto;
     width: 225px;
 }
 
