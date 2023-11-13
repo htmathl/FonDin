@@ -113,7 +113,6 @@ div.titulo {
     .entradas-creditos {
         border: 3px solid #FFF2D8;
         border-radius: 20px;
-        margin: 35px 10px;
     }
 
     div.titulo-cred {
@@ -151,7 +150,7 @@ div.titulo {
         text-align: center;
         padding: 4px 20px;
         max-width: fit-content;
-        margin-inline: auto;
+        margin-bottom: 20px;
         font-weight: bolder;
         border-width: 1.9px;
     }
@@ -272,12 +271,10 @@ div.titulo {
 #entradas-creditos {
     position: fixed;
     background-color: #113946;
-    margin-inline: 0;
-    margin-bottom: 0;
     width: 0vw;
     height: 80vh;
-    left: 50vw !important;
-    transform: translate(-50%) !important;
+    left: 50vw;
+    transform: translate(-50%);
     bottom: 7vh;
     z-index: 4;
     visibility: hidden;
@@ -306,4 +303,16 @@ div.titulo {
 
 .escolha-dias-uteis {
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    justify-content: space-evenly;
+    font-weight: bolder;
+}
+
+#cont-dias-uteis {
+    border-width: 2px;
+}
+
+#soma-dias-uteis {
+    border-width: 2px;
 }
