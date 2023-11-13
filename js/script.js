@@ -11,6 +11,8 @@ let pathBotao = document.querySelectorAll('.path-botao');
 let credMes = document.getElementById('credmes');
 
 let cbCreditoRecorrente = document.querySelector('.credito-recorrente');
+let cbContDiasUteis = document.querySelector('#cont-dias-uteis');
+let cbSomaDiasUteis = document.querySelector('#soma-dias-uteis');
 let lgdCreditoDia = document.querySelector('.dia-cred');
 
 let divCredIndefinido = document.querySelector('.cb-cred-indefinido');
@@ -109,6 +111,20 @@ cbCreditoRecorrente.addEventListener('click', () => {
     }
 });
 
+function checkBox(cb, texto, desativado) {
+    cb.addEventListener('click', () => {
+        if(desativado) {
+            cbCreditoRecorrente.classList.add('credito-recorrente-hover');
+            lgdCreditoDia.innerHTML = texto;
+            desativado = false;
+        } else {
+            cbCreditoRecorrente.classList.remove('credito-recorrente-hover');
+            lgdCreditoDia.innerHTML = texto;
+            desativado = true;
+        }
+    });
+}
+
 divCredIndefinido.addEventListener('click', () => {
     if(desativadoCredInd) {
         cbCredIndefinido.classList.add('indefinido-cred-hover');
@@ -122,7 +138,7 @@ divCredIndefinido.addEventListener('click', () => {
 mais.addEventListener('click', () => {
     mais.classList.add('mais-active-transition');
     mais.classList.add('mais-active');
-    
+
     setTimeout(() => {
         divEntradas.classList.add('entradas-active');
         setTimeout(() => { 

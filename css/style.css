@@ -88,7 +88,7 @@ div.titulo {
     }
 
     #treservas {
-        top: 14.75em;
+        top: 14.9em;
         padding: 0 15px;
         font-size: 30px;
     }
@@ -156,12 +156,12 @@ div.titulo {
 
     .credito-recorrente {
         text-align: center;
-        padding: 4px 20px;
+        padding: 4px 10px;
         margin-inline: auto;
         max-width: fit-content;
         margin-bottom: 20px;
         font-weight: bolder;
-        border-width: 1.9px;
+        border-width: 2px;
     }
 
     .credito-recorrente-hover {
@@ -312,20 +312,15 @@ div.titulo {
 
 .escolha-dias-uteis {
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
     justify-content: space-evenly;
     font-weight: bolder;
 }
 
-#cont-dias-uteis {
+#cont-dias-uteis, #soma-dias-uteis  {
     border-width: 2px;
-    padding-inline: 10px;
-}
-
-#soma-dias-uteis {
-    border-width: 2px;
-    padding-inline: 10px;
+    padding: 4px 10px;
 }
 
 #entradas-creditos {
