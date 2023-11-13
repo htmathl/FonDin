@@ -304,3 +304,6 @@ div.titulo {
     height: 80vh !important;
 }
 
+.escolha-dias-uteis {
+    display: flex;
+}
