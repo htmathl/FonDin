@@ -149,6 +149,7 @@ div.titulo {
     .credito-recorrente {
         text-align: center;
         padding: 4px 20px;
+        margin-inline: auto;
         max-width: fit-content;
         margin-bottom: 20px;
         font-weight: bolder;
@@ -304,15 +305,17 @@ div.titulo {
 .escolha-dias-uteis {
     display: flex;
     margin-top: 10px;
-    margin-bottom: 2px;
+    margin-bottom: 5px;
     justify-content: space-evenly;
     font-weight: bolder;
 }
 
 #cont-dias-uteis {
     border-width: 2px;
+    padding-inline: 10px;
 }
 
 #soma-dias-uteis {
     border-width: 2px;
+    padding-inline: 10px;
 }
