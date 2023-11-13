@@ -112,7 +112,7 @@ div.titulo {
         position: relative;
         top: -6px;
         float: right;
-        left: 1px;
+        left: 0.05em;
         margin-top: 10px;
     }
 
