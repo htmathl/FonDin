@@ -35,7 +35,7 @@ div.titulo {
     width: 114px;
 }
 
-#debs, #credmes, #result {
+#debsmes, #credmes, #result {
     display: flex;
     flex-direction: column;
     border: 2px solid #FFF2D8;
@@ -71,7 +71,7 @@ div.titulo {
         justify-content: space-evenly;
     }
 
-    #debs, #credmes, #result {
+    #debsmes, #credmes, #result {
         width: 170px;
         height: 70px;
         font-size: 20px;
@@ -84,7 +84,7 @@ div.titulo {
     }
 
     #tresults {
-        top: 22.5em;
+        top: 22.25em;
     }
 
     #treservas {
@@ -103,8 +103,9 @@ div.titulo {
         position: relative;
         margin: 20px auto 0;
         width: 15px;
-        border: 1.5px solid #FFF2D8;
-        border-radius: 2px;
+        border: 2px solid #FFF2D8;
+        border-radius: 10px;
+        z-index: 1;
     }
 
     .igual::before {
@@ -112,7 +113,7 @@ div.titulo {
         position: relative;
         top: -6px;
         float: right;
-        left: 0.05em;
+        left: 0.09em;
         margin-top: 10px;
     }
 
@@ -242,7 +243,7 @@ div.titulo {
 }
 
 #result {
-    margin: auto;
+    margin: 12px auto;
     width: 225px;
 }
 
@@ -255,12 +256,12 @@ div.titulo {
     height: 65px;
     border-radius: 10px;
     background-color: #FFF2D8;
-    z-index: 3;
+    z-index: 4;
     transition: all 0.1s ease-in-out;
 }
 
 #mais, #menos, #cifrao {
-    z-index: 2;
+    z-index: 3;
 }
 
 #fundoPreto {
@@ -268,7 +269,7 @@ div.titulo {
     background-color: rgb(0, 0, 0);
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 2;
     opacity: 0;
     visibility: hidden;
     transition: visibility 0s, opacity 0.2s ease-in-out;
@@ -287,7 +288,7 @@ div.titulo {
     left: 50vw;
     transform: translate(-50%);
     bottom: 7vh;
-    z-index: 4;
+    z-index: 5;
     visibility: hidden;
     transition: visibility 0s, all 0.3s ease-in-out;
 }
@@ -307,7 +308,7 @@ div.titulo {
 }
 
 .mais-active {
-    z-index: 4 !important;
+    z-index: 5 !important;
     right: 50vw !important;
     transform: translate(50%) !important;
     width: 90vw !important;
