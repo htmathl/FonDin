@@ -13,8 +13,8 @@ let pathBotao = document.querySelectorAll('.path-botao');
 let credMes = document.getElementById('credmes');
 
 let cbCreditoRecorrente = document.querySelector('.credito-recorrente');
-let cbContDiasUteis = document.querySelector('#cont-dias-uteis');
-let cbSomaDiasUteis = document.querySelector('#soma-dias-uteis');
+let cbContDiasUteis = document.querySelector('.cont-dias-uteis');
+let cbSomaDiasUteis = document.querySelector('.soma-dias-uteis');
 let lgdCreditoDia = document.querySelector('.dia-cred');
 let inpCreditoDia = document.querySelector('#dia-cred');
 
@@ -133,17 +133,24 @@ cbSomaDiasUteis.addEventListener('click', () => {
 });
 
 cbCreditoRecorrente.addEventListener('click', () => {
-    desativadoCredRec ?
-    desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, desativadoCredRec, 'Todo dia') :
-    desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, desativadoCredRec, 'Dia');
+    desativadoSomaUteis = toggleCheckBox(cbSomaDiasUteis, false);
+    if(!desativadoCredRec) {
+        desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, desativadoCredRec, 'Dia');
+        cbSomaDiasUteis.setAttribute('id', 'cb-desativado');
+        return;
+    }
+    desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, desativadoCredRec, 'Todo dia');
+    cbSomaDiasUteis.setAttribute('id', 'soma-dias-uteis');
 });
 
 //cbCredIndefinido
 divCredIndefinido.addEventListener('click', () => {
     desativadoCredInd = toggleCheckBox(cbCredIndefinido, desativadoCredInd);
     desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, false, 'Dia');
+    desativadoSomaUteis = toggleCheckBox(cbSomaDiasUteis, false);
     if( !desativadoCredInd ) {
         cbCreditoRecorrente.setAttribute('id', 'cb-desativado');
+        cbSomaDiasUteis.setAttribute('id', 'cb-desativado');
         return;
     }
     cbCreditoRecorrente.removeAttribute('id');

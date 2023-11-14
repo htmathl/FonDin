@@ -311,7 +311,7 @@ div.titulo {
     font-weight: bolder;
 }
 
-#cont-dias-uteis, #soma-dias-uteis  {
+.cont-dias-uteis, .soma-dias-uteis  {
     border-width: 2px;
     padding: 4px 10px;
 }
