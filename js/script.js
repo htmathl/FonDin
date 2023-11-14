@@ -56,7 +56,7 @@ inputValorCredito.addEventListener('input', () => {
 
 const data = new Date();
 const hoje = data.getDate();
-let mesAtual = 11;
+let mesAtual = data.getMonth();
 
 const dicMes = [ 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro' ];
 
