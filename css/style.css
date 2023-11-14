@@ -164,11 +164,6 @@ div.titulo {
         border-width: 2px;
     }
 
-    .credito-recorrente-hover {
-        color: #113946;
-        background-color: #FFF2D8;
-    }
-
     .data-cred {
         display: flex;
         justify-content: space-evenly;
@@ -207,10 +202,6 @@ div.titulo {
         margin-top: 12px;
         background-color: #113946;
         border-radius: 20px;
-    }
-
-    .indefinido-cred-hover {
-        background-color: #FFF2D8;
     }
 
     .lbl-ind-cred {
@@ -327,4 +318,14 @@ div.titulo {
 
 #entradas-creditos {
     display: none;
+}
+
+.cbs-hover {
+    color: #113946;
+    background-color: #FFF2D8;
+}
+
+#cb-desativado {
+    pointer-events: none;
+    opacity: 0.2;
 }

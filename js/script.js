@@ -1,6 +1,8 @@
 let fundoPreto = document.getElementById('fundoPreto');
 let botao = document.getElementById('botao');
-let desativadoFAB, desativadoCredRec, desativadoCredInd = true;
+let desativadoFAB = true, desativadoCredRec = true, 
+desativadoCredInd = true, desativadoContUteis = true, 
+desativadoSomaUteis = true, cbsHover = 'cbs-hover';
 
 let mais = document.getElementById('mais');
 let menos = document.getElementById('menos');
@@ -86,7 +88,7 @@ botao.addEventListener('click', () => {
         cifrao.style.bottom = '20vh';
         cifrao.style.transform = 'translate(50%) rotate(45deg)';
 
-        desativadoFAB = false;
+        
     } else {
         pathBotao.forEach(e => {
             e.style.stroke = '#113946';
@@ -107,46 +109,44 @@ botao.addEventListener('click', () => {
         
         cifrao.style.bottom = '5vh';
         cifrao.style.transform = 'translate(50%) rotate(0)';
-
-        desativadoFAB = true;
     }
+
+    desativadoFAB = !desativadoFAB;
+});
+
+function toggleCheckBox(cb, desativado, texto) {
+    desativado? cb?.classList.add(cbsHover) : cb?.classList.remove(cbsHover);
+    texto? inpCreditoDia.setAttribute('placeholder', texto) : null;
+    //recorrencia que pode ser útil pra qunado um precisar estar selecionado
+    //null && desativado? toggleCheckBox(inverte, !desativado): null;
+    return !desativado;
+}
+
+cbContDiasUteis.addEventListener('click', () => {
+    desativadoContUteis = toggleCheckBox(cbContDiasUteis, desativadoContUteis);
+    !desativadoSomaUteis? desativadoSomaUteis = toggleCheckBox(cbSomaDiasUteis, desativadoSomaUteis) : null;
+});
+
+cbSomaDiasUteis.addEventListener('click', () => {
+    desativadoSomaUteis = toggleCheckBox(cbSomaDiasUteis, desativadoSomaUteis);
+    !desativadoContUteis? desativadoContUteis = toggleCheckBox(cbContDiasUteis, desativadoContUteis) : null;
 });
 
 cbCreditoRecorrente.addEventListener('click', () => {
-    console.log("click");
-    if(desativadoCredRec) {
-        cbCreditoRecorrente.classList.add('credito-recorrente-hover');
-        inpCreditoDia.setAttribute('placeholder', 'Todo dia');
-        desativadoCredRec = false;
-    } else {
-        cbCreditoRecorrente.classList.remove('credito-recorrente-hover');
-        inpCreditoDia.setAttribute('placeholder', 'Dia');
-        desativadoCredRec = true;
-    }
+    desativadoCredRec ?
+    desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, desativadoCredRec, 'Todo dia') :
+    desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, desativadoCredRec, 'Dia');
 });
 
-function checkBox(cb, texto, desativado) {
-    cb.addEventListener('click', () => {
-        if(desativado) {
-            cbCreditoRecorrente.classList.add('credito-recorrente-hover');
-            lgdCreditoDia.innerHTML = texto;
-            desativado = false;
-        } else {
-            cbCreditoRecorrente.classList.remove('credito-recorrente-hover');
-            lgdCreditoDia.innerHTML = texto;
-            desativado = true;
-        }
-    });
-}
-
+//cbCredIndefinido
 divCredIndefinido.addEventListener('click', () => {
-    if(desativadoCredInd) {
-        cbCredIndefinido.classList.add('indefinido-cred-hover');
-        desativadoCredInd = false;
-    } else {
-        cbCredIndefinido.classList.remove('indefinido-cred-hover');
-        desativadoCredInd = true;
+    desativadoCredInd = toggleCheckBox(cbCredIndefinido, desativadoCredInd);
+    desativadoCredRec = toggleCheckBox(cbCreditoRecorrente, false, 'Dia');
+    if( !desativadoCredInd ) {
+        cbCreditoRecorrente.setAttribute('id', 'cb-desativado');
+        return;
     }
+    cbCreditoRecorrente.removeAttribute('id');
 });
 
 mais.addEventListener('click', () => {
