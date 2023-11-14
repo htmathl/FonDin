@@ -193,7 +193,7 @@ mais.addEventListener('click', () => {
         divEntradas.classList.add('entradas-active');
         setTimeout(() => { 
             divEntradasCreditos.style.display = 'block'; 
-        }, 200);
+        }, 220);
 
     }, 500);
 });
@@ -206,7 +206,7 @@ menos.addEventListener('click', () => {
         divEntradas.classList.add('entradas-active');
         setTimeout(() => { 
             divEntradasDebitos.style.display = 'block'; 
-        }, 200);
+        }, 220);
 
     }, 500);
 });
