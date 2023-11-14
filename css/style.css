@@ -139,13 +139,13 @@ div.titulo {
         justify-content: center;
     }
 
-    #credito-rs {
+    #rs {
         font-size: 1.5rem;
         font-weight: bold;
 
     }
 
-    input#valor {
+    input.valor {
         font-size: 1.5rem;
         max-width: 200px;
     }
@@ -220,7 +220,7 @@ div.titulo {
         min-width: 250px;
     }
 
-    #btn-voltar-cred {
+    .btn-voltar-cred {
         display: flex;
         justify-content: center;
         margin-top: 25px;
@@ -284,12 +284,12 @@ div.titulo {
     width: 90vw !important;
 }
 
-.mais-active-transition > svg {
+.active-transition > svg {
     rotate: 45deg;
     transition: rotate 0.4s ease-in-out;
 }
 
-.mais-active-transition {
+.active-transition {
     transition: all 0.3s ease-in-out !important;
 }
 
@@ -316,7 +316,7 @@ div.titulo {
     padding: 4px 10px;
 }
 
-#entradas-creditos {
+#entradas-creditos, #entradas-debitos {
     display: none;
 }
 

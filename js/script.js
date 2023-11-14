@@ -8,6 +8,8 @@ let mais = document.getElementById('mais');
 let menos = document.getElementById('menos');
 let cifrao = document.getElementById('cifrao');
 
+let listabotoes = [ mais, menos, cifrao ];
+
 let pathBotao = document.querySelectorAll('.path-botao');
 
 let credMes = document.getElementById('credmes');
@@ -15,22 +17,26 @@ let credMes = document.getElementById('credmes');
 let cbCreditoRecorrente = document.querySelector('.credito-recorrente');
 let cbContDiasUteis = document.querySelector('.cont-dias-uteis');
 let cbSomaDiasUteis = document.querySelector('.soma-dias-uteis');
-let lgdCreditoDia = document.querySelector('.dia-cred');
+let lgdsCreditoDebitoDia = document.querySelectorAll('.dia-cred');
 let inpCreditoDia = document.querySelector('#dia-cred');
 
 let divCredIndefinido = document.querySelector('.cb-cred-indefinido');
 let cbCredIndefinido = document.querySelector('.indefinido-cred');
 
 let inputValorCredito = document.getElementById('valor');
+let inputValorDebito = document.getElementById('valor-debito');
 
 let divEntradas = document.querySelector('#entradas');
-let btnVoltarAdicionarCred = document.getElementById('btn-voltar-cred'); 
+let btnsVoltarAdicionarCred = document.querySelectorAll('.btn-voltar-cred'); 
 
 let divEntradasCreditos = document.querySelector('#entradas-creditos');
+let divEntradasDebitos = document.querySelector('#entradas-debitos');
+let divEntradasReservas = document.querySelector('#entradas-reservas');
 
-function formatarMoeda() {
-    var valor = inputValorCredito.value;
+let listaDivs = [ divEntradasCreditos, divEntradasDebitos ];
 
+function formatarMoeda(valorBase) {
+    var valor = valorBase.value;
     valor = valor + '';
     valor = parseInt(valor.replace(/[\D]+/g, ''));
     valor = valor + '';
@@ -39,19 +45,30 @@ function formatarMoeda() {
     if (valor.length > 6) {
         valor = valor.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
     }
-
-    inputValorCredito.value = valor;
+    
     if(valor == 'NaN') {
-        inputValorCredito.value = '';
-        inputValorCredito.classList.remove('input-focus');
+        valor = '';
+        valorBase.classList.remove('input-focus');
     }
+
+    return valor;
 }
+
+inputValorCredito.addEventListener('keyup', () => inputValorCredito.value = formatarMoeda(inputValorCredito));
+inputValorDebito.addEventListener('keyup', () => inputValorDebito.value = formatarMoeda(inputValorDebito));
 
 inputValorCredito.addEventListener('input', () => {
     if(inputValorCredito.value.length === 0)
         inputValorCredito.classList.remove('input-focus');
     else
         inputValorCredito.classList.add('input-focus');
+});
+
+inputValorDebito.addEventListener('input', () => {
+    if(inputValorDebito.value.length === 0)
+        inputValorDebito.classList.remove('input-focus');
+    else
+        inputValorDebito.classList.add('input-focus');
 });
 
 const data = new Date();
@@ -64,7 +81,9 @@ for (let i = 0; i < dicMes.length; i++) {
     if(dicMes.indexOf(dicMes[i]) === mesAtual) mesAtual = dicMes[i];
 }
 
-lgdCreditoDia.innerText = mesAtual;
+lgdsCreditoDebitoDia.forEach(lgd => {
+    lgd.innerText = mesAtual;
+});
 
 botao.addEventListener('click', () => {
     if(desativadoFAB) {
@@ -156,8 +175,18 @@ divCredIndefinido.addEventListener('click', () => {
     cbCreditoRecorrente.removeAttribute('id');
 });
 
+let fecharTelasBotoes = botao => {
+    setTimeout(() => {
+        botao.classList.remove('mais-active');
+        setTimeout(() => {
+            botao.classList.remove('active-transition');
+        }, 100);
+
+    }, 500);
+}
+
 mais.addEventListener('click', () => {
-    mais.classList.add('mais-active-transition');
+    mais.classList.add('active-transition');
     mais.classList.add('mais-active');
 
     setTimeout(() => {
@@ -169,15 +198,23 @@ mais.addEventListener('click', () => {
     }, 500);
 });
 
-btnVoltarAdicionarCred.addEventListener('click', () => {
-    divEntradas.classList.remove('entradas-active');
-    divEntradasCreditos.style.display = 'none';
+menos.addEventListener('click', () => {
+    menos.classList.add('active-transition');
+    menos.classList.add('mais-active');
 
     setTimeout(() => {
-        mais.classList.remove('mais-active');
-        setTimeout(() => {
-            mais.classList.remove('mais-active-transition');
-        }, 100);
+        divEntradas.classList.add('entradas-active');
+        setTimeout(() => { 
+            divEntradasDebitos.style.display = 'block'; 
+        }, 200);
 
     }, 500);
+});
+
+btnsVoltarAdicionarCred.forEach( btn => {
+    btn.addEventListener('click', () => {
+        divEntradas.classList.remove('entradas-active');
+        listaDivs.forEach(e => e ? e.style.display = 'none' : null);
+        listabotoes.forEach(e => fecharTelasBotoes(e));
+    });
 });
