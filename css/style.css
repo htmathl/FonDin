@@ -44,21 +44,24 @@ div.titulo {
     align-items: center;
 }
 
-.linha {
-    width: 100%;
-    border: 1px solid;
-    border-left: 0;
-    margin: 50px 0;
+.div-reservas {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+.linha {
+    border: 1px solid;
+    min-width: 200px;
+    height: 0;
 }
 
 #tcredmes, #tdebsmes, #tresults, #treservas {
-    position: absolute;
-    top: 14.6em;
-    padding: 5px;
+    margin: 0 auto;
+    padding-inline: 6px;
     background-color: #113946;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -73,8 +76,12 @@ div.titulo {
 
     #debsmes, #credmes, #result {
         width: 150px;
-        height: 70px;
+        height: 50px;
         font-size: 20px;
+    }
+
+    #result {
+        height: 60px;
     }
 
     div.dineros, #botao, #mais, #menos, #cifrao {
@@ -83,13 +90,16 @@ div.titulo {
         align-items: center;
     }
 
+    .dineros {
+        padding-inline: 5px;
+    }
+
     #tresults {
         top: 22.25em;
     }
 
     #treservas {
         top: 14.9em;
-        padding: 0 15px;
         font-size: 30px;
     }
 
@@ -175,14 +185,13 @@ div.titulo {
         width: 10px;
     }
 
-    .dia-cred {
+    .dia-cred, .categoria {
         margin: 0 auto;
-        padding-inline: 4px;
+        padding-inline: 8px;
         font-weight: bolder;
     }
 
     #dia-cred {
-        padding: 0;
         max-width: 110px;
         position: relative;
         top: -0.2em;
@@ -284,7 +293,7 @@ div.titulo {
     width: 90vw !important;
 }
 
-.active-transition > svg {
+.active-transition > svg, .active-transition > img {
     rotate: 45deg;
     transition: rotate 0.4s ease-in-out;
 }
@@ -316,7 +325,7 @@ div.titulo {
     padding: 4px 10px;
 }
 
-#entradas-creditos, #entradas-debitos {
+#entradas-creditos, #entradas-debitos, #entradas-reservas {
     display: none;
 }
 

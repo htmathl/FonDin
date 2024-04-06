@@ -33,7 +33,7 @@ let divEntradasCreditos = document.querySelector('#entradas-creditos');
 let divEntradasDebitos = document.querySelector('#entradas-debitos');
 let divEntradasReservas = document.querySelector('#entradas-reservas');
 
-let listaDivs = [ divEntradasCreditos, divEntradasDebitos ];
+let listaDivs = [ divEntradasCreditos, divEntradasDebitos, divEntradasReservas ];
 
 function formatarMoeda(valorBase) {
     var valor = valorBase.value;
@@ -185,30 +185,24 @@ let fecharTelasBotoes = botao => {
     }, 500);
 }
 
-mais.addEventListener('click', () => {
-    mais.classList.add('active-transition');
-    mais.classList.add('mais-active');
+listabotoes.forEach(button => {
+    button.addEventListener('click', () => {
+        button.classList.add('active-transition');
+        button.classList.add('mais-active');
 
-    setTimeout(() => {
-        divEntradas.classList.add('entradas-active');
-        setTimeout(() => { 
-            divEntradasCreditos.style.display = 'block'; 
-        }, 220);
+        listaDivs.forEach(div => {
+            setTimeout(() => {
+                divEntradas.classList.add('entradas-active');
+                setTimeout(() => { 
+                    if( button.ariaLabel === div.ariaLabel ) {
+                        div.style.display = 'block';
+                    }
 
-    }, 500);
-});
-
-menos.addEventListener('click', () => {
-    menos.classList.add('active-transition');
-    menos.classList.add('mais-active');
-
-    setTimeout(() => {
-        divEntradas.classList.add('entradas-active');
-        setTimeout(() => { 
-            divEntradasDebitos.style.display = 'block'; 
-        }, 220);
-
-    }, 500);
+                }, 220);
+    
+            }, 500);
+        });
+    });
 });
 
 btnsVoltarAdicionarCred.forEach( btn => {
