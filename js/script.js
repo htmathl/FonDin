@@ -245,7 +245,7 @@ function calendario(dia) {
     }
 
     document.querySelector(dia).addEventListener('keyup', () => {
-        if(document.querySelector(dia).value > 31 || document.querySelector(dia).value > meses[now.getMonth()+2] || isNaN(document.querySelector(dia).value) || document.querySelector(dia).value <= 0) {
+        if(document.querySelector(dia).value > 31 || document.querySelector(dia).value > meses[now.getMonth()] || isNaN(document.querySelector(dia).value) || document.querySelector(dia).value <= 0) {
             document.querySelector(dia).value = '';
         }
     });
