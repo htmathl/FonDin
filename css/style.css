@@ -191,7 +191,7 @@ div.titulo {
         font-weight: bolder;
     }
 
-    #dia-cred {
+    #dia-cred, #dia-deb, #dia-res {
         max-width: 110px;
         position: relative;
         top: -0.2em;

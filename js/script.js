@@ -71,6 +71,10 @@ inputValorDebito.addEventListener('input', () => {
         inputValorDebito.classList.add('input-focus');
 });
 
+// @todo ------------------------------------------------------------
+
+// colocar na função calendário
+
 const data = new Date();
 const hoje = data.getDate();
 let mesAtual = data.getMonth();
@@ -84,6 +88,8 @@ for (let i = 0; i < dicMes.length; i++) {
 lgdsCreditoDebitoDia.forEach(lgd => {
     lgd.innerText = mesAtual;
 });
+
+// ------------------------------------------------------------------
 
 botao.addEventListener('click', () => {
     if(desativadoFAB) {
@@ -194,9 +200,8 @@ listabotoes.forEach(button => {
             setTimeout(() => {
                 divEntradas.classList.add('entradas-active');
                 setTimeout(() => { 
-                    if( button.ariaLabel === div.ariaLabel ) {
+                    if( button.ariaLabel === div.ariaLabel )
                         div.style.display = 'block';
-                    }
 
                 }, 220);
     
@@ -212,3 +217,40 @@ btnsVoltarAdicionarCred.forEach( btn => {
         listabotoes.forEach(e => fecharTelasBotoes(e));
     });
 });
+
+function calendario(dia) {
+    let now = new Date;
+    let anoAtual = now.getFullYear();
+    let bissexto = anoAtual % 4 == 0 && anoAtual % 100 != 0 ? true : false;
+
+    let meses = { 
+        0: 31,
+        1: 28,
+        2: 31,
+        3: 30,
+        4: 31,
+        5: 30,
+        6: 31,
+        7: 31,
+        8: 30,
+        9: 31,
+        10: 30,
+        11: 31
+    };
+
+    if(bissexto) {
+        meses[1] = 29;
+    } else {
+        meses[1] = 28;
+    }
+
+    document.querySelector(dia).addEventListener('keyup', () => {
+        if(document.querySelector(dia).value > 31 || document.querySelector(dia).value > meses[now.getMonth()+2] || isNaN(document.querySelector(dia).value) || document.querySelector(dia).value <= 0) {
+            document.querySelector(dia).value = '';
+        }
+    });
+}
+
+calendario("#dia-cred");
+calendario("#dia-deb");
+calendario("#dia-res");
