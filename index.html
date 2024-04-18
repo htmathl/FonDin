@@ -9,197 +9,30 @@
     <script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
     <script src="js/script.js" defer></script>
-    <script type="module" src="js/firebasobrieConnrction.js" defer></script>
+    <script type="module" src="js/firebaseConnection.js" defer></script>
     <script src="js/login.js" defer></script>
 </head>
 <body>
-    <div id="fundoPreto"></div>
     <section class="principal">
         <div class="titulo">
             <h1>FonDin</h1>
             <img id="urano" src="assets/svg/uranus.svg" alt="Foto de urano">
         </div>
-        <div class="dineros">
-            <fieldset id="credmes">
-                <legend id="tcredmes">Créditos do mês</legend>
-                <div id="ccredmes">R$ 0,00</div>
-            </fieldset>
-            <div class="igual1" style="margin-inline: 4px;"></div>
-            <fieldset id="debsmes">
-                <legend id="tdebsmes">Débitos do mês</legend>
-                <div id="cdebsmes">R$ 0,00</div>
-            </fieldset>
-        </div>
-        <div class="dineros2">
-            <div class="igual">
-                <div class="igual1"></div>
-                <div class="igual2"></div>
+        <div class="caixinha">
+            <div style="text-align: center;">
+                <h2>Bem vindo(a)!</h2>
+                <p>O que vamos dever hoje?</p>
             </div>
-            <div id="result">
-                <div id="cresults">R$ 0,00</div>
-            </div>
-        </div>
-        <div>
-            <div class="div-reservas">
-                <div class="linha"></div>
-                <div id="treservas">Reservas</div>
-                <div class="linha"></div>
-            </div>
-            <div id="reservas"></div>
-        </div>
-        <div id="botao">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="path-botao" d="M11 3L11 19" stroke="#113946" stroke-width="3.5" stroke-linecap="round"/>
-                <path class="path-botao" d="M3 11L19 11" stroke="#113946" stroke-width="3.5" stroke-linecap="round"/>
-            </svg>
-        </div>
-        <div id="cifrao" aria-label="reserva">
-           <img src="assets/svg/cifrao.svg" alt="" srcset="" style="transform: rotate(-45deg);">
-        </div>
-        <div id="menos" aria-label="debito">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" transform ="rotate(-45)" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 11L19 11" stroke="#113946" stroke-width="3.5" stroke-linecap="round"/>
-            </svg>
-        </div>
-        <div id="mais" aria-label="credito">
-            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" transform ="rotate(45)" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 3L11 19" stroke="#113946" stroke-width="3.5" stroke-linecap="round"/>
-                <path d="M3 11L19 11" stroke="#113946" stroke-width="3.5" stroke-linecap="round"/>
-            </svg>
+            <form action="./pages/dashboard.html" id="login">
+                <!-- <input type="text" name="Nome" id="" placeholder="Nome"> -->
+                <input type="email" name="" id="" placeholder="Email">
+                <input type="password" name="" id="" placeholder="Senha">
+                <button id="logar" type="submit">Entrar</button>
+            </form>
+            <p>
+                Não possui uma conta? <a class="links" href="http://">Cadastre-se</a>
+            </p>
         </div>
     </section>
-    <div class="entradas bordas-elementos" id="entradas">
-        <div id="entradas-creditos" aria-label="credito">
-            <div class="superior">
-                <div class="titulo-cred titulo">
-                    <span>Adicione créditos</span>
-                </div>
-                <div class="valor">
-                    <span id="rs">R$</span>
-                    <input type="tel" name="valor" class="valor" id="valor" placeholder="[Insira um valor]" maxlength="8">
-                </div>
-            </div>
-            <div class="linha" style="margin-bottom: 0;"></div>
-            <div class="inferior">
-                <div class="escolha-dias-uteis">
-                    <div class="entradas-creditos bordas-elementos cont-dias-uteis" id="cont-dias-uteis">
-                        <span>Cont. dias úteis</span>
-                    </div>
-                    <div class="entradas-creditos bordas-elementos soma-dias-uteis" id="cb-desativado">
-                        <span>Soma dias úteis</span>
-                    </div>
-                </div>
-                <div class="entradas-creditos bordas-elementos credito-recorrente">
-                    <span>Créditos recorrente</span>
-                </div>
-                <div class="data-cred">
-                    <fieldset>
-                        <legend class="dia-cred"></legend>
-                        <input type="tel" name="dia-cred" id="dia-cred" maxlength="2" placeholder="Dia"/>
-                    </fieldset>
-                    <div class="cb-cred-indefinido">
-                        <div class="indefinido-cred"></div>
-                        <label class="lbl-ind-cred">indefinido</label>
-                    </div>
-                </div>
-                <div class="data-cred categoria-cred">
-                    <fieldset>
-                        <legend class="categoria">Categoria</legend>
-                        <input type="text" name="categoria" id="dia-cred"maxlength="30"/>
-                    </fieldset>
-                </div>
-                <div class="btn-voltar-cred">
-                    <img src="assets/svg/btnVoltar.svg" alt="" srcset="">
-                </div>
-            </div>
-        </div>
-        <div id="entradas-debitos" aria-label="debito">
-            <div class="superior">
-                <div class="titulo-cred titulo">
-                    <span>Adicione débitos</span>
-                </div>
-                <div class="valor">
-                    <span id="rs">R$</span>
-                    <input type="tel" name="valor" class="valor" id="valor-debito" placeholder="[Insira um valor]" maxlength="8">
-                </div>
-            </div>
-            <div class="linha" style="margin-bottom: 0;"></div>
-            <div class="inferior">
-                <div class="escolha-dias-uteis">
-                    <div class="entradas-creditos bordas-elementos cont-dias-uteis" id="cont-dias-uteis">
-                        <span>Cont. dias úteis</span>
-                    </div>
-                    <div class="entradas-creditos bordas-elementos soma-dias-uteis" id="cb-desativado">
-                        <span>Soma dias úteis</span>
-                    </div>
-                </div>
-                <div class="entradas-creditos bordas-elementos credito-recorrente">
-                    <span>Débitos recorrente</span>
-                </div>
-                <div class="data-cred">
-                    <fieldset>
-                        <legend class="dia-cred"></legend>
-                        <input type="tel" name="dia-cred" id="dia-deb" maxlength="2" placeholder="Dia"/>
-                    </fieldset>
-                    <div class="cb-cred-indefinido">
-                        <div class="indefinido-cred"></div>
-                        <label class="lbl-ind-cred">indefinido</label>
-                    </div>
-                </div>
-                <div class="data-cred categoria-cred">
-                    <fieldset>
-                        <legend class="categoria">Categoria</legend>
-                        <input type="text" name="categoria" id="dia-cred"maxlength="30"/>
-                    </fieldset>
-                </div>
-                <div class="btn-voltar-cred">
-                    <img src="assets/svg/btnVoltar.svg" alt="" srcset="">
-                </div>
-            </div>
-        </div>
-        <div id="entradas-reservas" aria-label="reserva">
-            <div class="superior">
-                <div class="titulo-cred titulo">
-                    <span>Adicione reservas</span>
-                </div>
-                <div class="valor">
-                    <span id="rs">R$</span>
-                    <input type="tel" name="valor" class="valor" id="valor" placeholder="[Insira um valor]" maxlength="8">
-                </div>
-            </div>
-            <div class="linha" style="margin-bottom: 0;"></div>
-            <div class="inferior">
-                <div class="escolha-dias-uteis">
-                    <div class="entradas-creditos bordas-elementos cont-dias-uteis" id="cont-dias-uteis">
-                        <span>Cont. dias úteis</span>
-                    </div>
-                    <div class="entradas-creditos bordas-elementos soma-dias-uteis" id="cb-desativado">
-                        <span>Soma dias úteis</span>
-                    </div>
-                </div>
-                <div class="entradas-creditos bordas-elementos credito-recorrente">
-                    <span>Créditos recorrente</span>
-                </div>
-                <div class="data-cred">
-                    <fieldset>
-                        <legend class="dia-cred"></legend>
-                        <input type="tel" name="dia-cred" id="dia-res" maxlength="2" placeholder="Dia"/>
-                    </fieldset>
-                    <div class="cb-cred-indefinido">
-                        <div class="indefinido-cred"></div>
-                        <label class="lbl-ind-cred">indefinido</label>
-                    </div>
-                </div>
-                <div class="data-cred categoria-cred">
-                    <fieldset>
-                        <legend class="categoria">Categoria</legend>
-                        <input type="text" name="categoria" id="dia-cred"maxlength="30"/>
-                    </fieldset>
-                </div>
-                <div class="btn-voltar-cred">
-                    <img src="assets/svg/btnVoltar.svg" alt="" srcset="">
-                </div>
-            </div>
-    </div>
 </body>
 </html>

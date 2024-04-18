@@ -25,6 +25,53 @@ input {
     color: #FFF2D8;
 }
 
+.caixinha {
+    border: 3px solid #FFF2D8;
+    border-radius: 5px;
+    margin: 0 40px;
+    padding: 0px 0;
+    box-shadow: 7px 7px 0 0;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+#login > input {
+    border: #FFF2D8 1.7px solid !important;
+    border-radius: 5px;
+    padding: 12px;
+    min-width: 180px;
+    text-align: start;
+}
+
+#logar {
+    outline: none;
+    background-color: transparent;
+    border: solid 1.7px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px 36px;
+    margin-top: 18px;
+}
+
+.caixinha > p {
+    font-size: 13px;
+    text-align: center;
+}
+
+.links {
+    color: #FFF2D8;
+}
+
 div.titulo {
     display: flex;
     justify-content: center;
